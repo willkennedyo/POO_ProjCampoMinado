@@ -11,7 +11,7 @@ public class ViewMain extends javax.swing.JFrame {
     public ViewMain() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.setVisible(true);
+       // this.setVisible(true);
     }
 
     @SuppressWarnings("unchecked")
@@ -72,13 +72,9 @@ public class ViewMain extends javax.swing.JFrame {
         btn16x30.setText("<html><h3 style=\"text-align: center;\"><strong>16 x 30</strong></h3>\n<p style=\"text-align: center;\"><strong>99</strong> Minas</p></html>");
         btn16x30.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btn16x30.setFocusable(false);
-        btn16x30.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn16x30ActionPerformed(evt);
-            }
-        });
 
-        btnPref.setText("<html><h3 style=\"text-align: center;\"><strong>?</strong></h3>\n<p style=\"text-align: center;\"> Personalizado</p></html>");
+        btnPref.setText("<html><h3 style=\"text-align: center;\"><strong>Sobre</strong></h3> <p style=\"text-align: center;\"> Detalhes do desenvolvimento</p></html>");
+        btnPref.setActionCommand("");
         btnPref.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnPref.setFocusable(false);
 
@@ -111,10 +107,10 @@ public class ViewMain extends javax.swing.JFrame {
                     .addComponent(btn16x16, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn8x8, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(pnlInitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn16x30, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPref, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(pnlInitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnPref, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn16x30, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -131,41 +127,12 @@ public class ViewMain extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pnlInit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn16x30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn16x30ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn16x30ActionPerformed
-
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(ViewMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(ViewMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(ViewMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(ViewMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new ViewMain().setVisible(true);
-//            }
-//        });
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn16x16;

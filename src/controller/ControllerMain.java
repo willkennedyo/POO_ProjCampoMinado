@@ -7,6 +7,7 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import view.*;
@@ -42,7 +43,13 @@ public class ControllerMain implements ActionListener, ChangeListener{
         }else if(e.getSource()==this.viewMain.getBtn16x30()){
             defineMapa(16,30);
         }else if(e.getSource()==this.viewMain.getBtnPref()){
-            //Definir botão SOBRE
+        JOptionPane.showMessageDialog(this.viewMain, "Projeto apresentado ao Curso de Análise e Desenvolvimento de Sistemas, \n"
+                                                                                                + "da FATEC-SP, do Centro Estadual de Educação Tecnológica Paula Souza, \n"
+                                                                                                + "como aproveitamento no componente curricular de Programação Orientada\n"
+                                                                                                + "a Objetos, ministrado pelo professor J. P. Ciscato.\n\n"
+                                                                                                + "Desenvolvido por:\n"
+                                                                                                + "Any Ambria                              Marcelo Gomes\n"
+                                                                                                + "Michel Leopold                      Willian Fonseca", "Sobre",1 );
         }
        }
 
@@ -52,9 +59,9 @@ public class ControllerMain implements ActionListener, ChangeListener{
     }
   
         private void defineMapa(int i, int j) {
+            this.viewMain.dispose();
             this.viewMinefield = new ViewMinefield(i,j);
             this.viewMinefield.setVisible(true);
-            this.viewMain.dispose();
         
         
     }

@@ -7,6 +7,8 @@ package view;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
 import java.awt.List;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,17 +41,62 @@ public class ViewMinefield extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pnlMapa = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        pnlMapa.setToolTipText("");
+        pnlMapa.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        pnlMapa.setFocusable(false);
+
+        jButton1.setText("jButton1");
+
+        jButton2.setText("jButton2");
+
+        jButton3.setText("jButton3");
+
+        javax.swing.GroupLayout pnlMapaLayout = new javax.swing.GroupLayout(pnlMapa);
+        pnlMapa.setLayout(pnlMapaLayout);
+        pnlMapaLayout.setHorizontalGroup(
+            pnlMapaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlMapaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlMapaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlMapaLayout.setVerticalGroup(
+            pnlMapaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlMapaLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jButton1)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addGap(18, 18, 18)
+                .addComponent(jButton3)
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(290, Short.MAX_VALUE)
+                .addComponent(pnlMapa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(pnlMapa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         pack();
@@ -62,19 +109,27 @@ public class ViewMinefield extends javax.swing.JFrame {
     private void initMinefield(int linha, int coluna) {
         int indice = 0;
         JButton btnTemp;  
+        
+        //Um Gambi Pattern basico
+        this.setSize(((coluna+1)*30)+128,((linha+1)*30)+60);
+        pnlMapa.setLocation((coluna+1)*30,10);
+        this.add(pnlMapa, new GridBagConstraints());
+        //fim GP
+        
+        
+        this.setLocationRelativeTo(null);
+        
         for (int i = 0; i <linha;i++){  
             for(int j = 0; j < coluna; j++){
                 System.out.print(j +"  ");
                 btnTemp = new JButton();  
                 //incluindo o botão no map com um rotulo, iniciando de 0
-                botoes.put(Integer.toString(indice), btnTemp); 
-                //assumindo que i.getNome() devolve um nome único para cada programa
-                  botoes.get(Integer.toString(indice)).setText("");
-                 botoes.get(Integer.toString(indice)).setBounds(j*30,i*30,30,30);
+                 botoes.put(Integer.toString(indice), btnTemp); 
+                 botoes.get(Integer.toString(indice)).setText("");
+                 botoes.get(Integer.toString(indice)).setBounds((j+1)*30,(i+1)*30,30,30);
                  botoes.get(Integer.toString(indice)).setVisible(true);
-                 //botoes.get(Integer.toString(indice)).setSe(true);
+                 //add o botao no JFrame
                   getContentPane().add(botoes.get(Integer.toString(indice)));
-                  //botoes.get(Integer.toString(indice)).setLocation();
                   indice++;
              }
                 System.out.println(" ");
@@ -82,5 +137,9 @@ public class ViewMinefield extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JPanel pnlMapa;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,9 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Git/POO_ProjCampoMinado/src/view/ViewMain.java</file>
-            <file>file:/C:/Git/POO_ProjCampoMinado/src/control/Main.java</file>
-            <file>file:/C:/Git/POO_ProjCampoMinado/src/view/Tela_init.java</file>
-            <file>file:/C:/Git/POO_ProjCampoMinado/src/view/Tela_jogo.java</file>
+            <file>file:/C:/Git/POO_ProjCampoMinado/src/Minefield/MVC.java</file>
+            <file>file:/C:/Git/POO_ProjCampoMinado/src/view/ViewMinefield.java</file>
+            <file>file:/C:/Git/POO_ProjCampoMinado/src/controller/ControllerMain.java</file>
         </group>
     </open-files>
 </project-private>

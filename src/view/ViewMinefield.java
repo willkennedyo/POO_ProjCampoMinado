@@ -13,6 +13,8 @@ import java.awt.List;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
@@ -28,8 +30,10 @@ public class ViewMinefield extends javax.swing.JFrame {
     private  Map<String,JButton> botoes = new HashMap<String,JButton>();
     
     public ViewMinefield(int linha, int coluna) {
+        this.linha = linha;
+        this.coluna = coluna;
         initComponents();
-        initMinefield(linha,coluna);
+        initMinefield(this.linha, this.coluna);
     }
 
     /**
@@ -42,21 +46,33 @@ public class ViewMinefield extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlMapa = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnReiniciar = new javax.swing.JButton();
+        btnVoltar = new javax.swing.JButton();
+        lblContador = new javax.swing.JLabel();
+        lblBandeira = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         pnlMapa.setToolTipText("");
         pnlMapa.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         pnlMapa.setFocusable(false);
 
-        jButton1.setText("jButton1");
+        btnReiniciar.setText("Reiniciar");
+        btnReiniciar.setToolTipText("");
 
-        jButton2.setText("jButton2");
+        btnVoltar.setText("Voltar");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("jButton3");
+        lblContador.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblContador.setText("0/0");
+
+        lblBandeira.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblBandeira.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CampoMinadoAviso.png"))); // NOI18N
 
         javax.swing.GroupLayout pnlMapaLayout = new javax.swing.GroupLayout(pnlMapa);
         pnlMapa.setLayout(pnlMapaLayout);
@@ -65,21 +81,26 @@ public class ViewMinefield extends javax.swing.JFrame {
             .addGroup(pnlMapaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlMapaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblBandeira, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblContador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(pnlMapaLayout.createSequentialGroup()
+                        .addComponent(btnReiniciar)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         pnlMapaLayout.setVerticalGroup(
             pnlMapaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMapaLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jButton1)
+                .addGap(21, 21, 21)
+                .addComponent(btnReiniciar)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addComponent(btnVoltar)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(lblBandeira)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblContador)
+                .addGap(23, 23, 23))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -102,17 +123,102 @@ public class ViewMinefield extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVoltarActionPerformed
+
     /**
      * @param args the command line arguments
      */
     
-    private void initMinefield(int linha, int coluna) {
-        int indice = 0;
+    
+//Get e Set
+    
+    public int getLinha() {
+        return linha;
+    }
+
+    public void setLinha(int linha) {
+        this.linha = linha;
+    }
+
+    public int getColuna() {
+        return coluna;
+    }
+
+    public void setColuna(int coluna) {
+        this.coluna = coluna;
+    }
+
+    public int getMinas() {
+        return minas;
+    }
+
+    public void setMinas(int minas) {
+        this.minas = minas;
+    }
+
+    public Map<String, JButton> getBotoes() {
+        return botoes;
+    }
+        public JButton getBotaoMapa(String i) {
+        return botoes.get(i);
+    }
+
+    public void setBotoes(Map<String, JButton> botoes) {
+        this.botoes = botoes;
+        for(int i = 0; i<botoes.size();i++)
+            getContentPane().add(botoes.get(Integer.toString(i)));
+    }
+
+    public JButton getBtnReiniciar() {
+        return btnReiniciar;
+    }
+
+    public void setBtnReiniciar(JButton btnReiniciar) {
+        this.btnReiniciar = btnReiniciar;
+    }
+
+    public JButton getBtnVoltar() {
+        return btnVoltar;
+    }
+
+    public void setBtnVoltar(JButton btnVoltar) {
+        this.btnVoltar = btnVoltar;
+    }
+
+    public JLabel getLblBandeira() {
+        return lblBandeira;
+    }
+
+    public void setLblBandeira(JLabel lblBandeira) {
+        this.lblBandeira = lblBandeira;
+    }
+
+    public JLabel getLblContador() {
+        return lblContador;
+    }
+
+    public void setLblContador(JLabel lblContador) {
+        this.lblContador = lblContador;
+    }
+
+    public JPanel getPnlMapa() {
+        return pnlMapa;
+    }
+
+    public void setPnlMapa(JPanel pnlMapa) {
+        this.pnlMapa = pnlMapa;
+        getContentPane().add(pnlMapa, new GridBagConstraints());
+    }
+    
+     private void initMinefield(int linha, int coluna) {
         JButton btnTemp;  
+        String indice;
         
         //Um Gambi Pattern basico
-        this.setSize(((coluna+1)*30)+128,((linha+1)*30)+60);
-        pnlMapa.setLocation((coluna+1)*30,10);
+        this.setSize(((coluna+1)*28)+130,((linha+1)*28)+60);
+        pnlMapa.setLocation((coluna+1)*28+15,10);
         this.add(pnlMapa, new GridBagConstraints());
         //fim GP
         
@@ -121,25 +227,28 @@ public class ViewMinefield extends javax.swing.JFrame {
         
         for (int i = 0; i <linha;i++){  
             for(int j = 0; j < coluna; j++){
-                System.out.print(j +"  ");
                 btnTemp = new JButton();  
+                btnTemp.setFocusable(false);
+                btnTemp.setText("");
+                btnTemp.setBounds((j+1)*28,(i+1)*28,30,30);
+                btnTemp.setVisible(true);
                 //incluindo o botão no map com um rotulo, iniciando de 0
-                 botoes.put(Integer.toString(indice), btnTemp); 
-                 botoes.get(Integer.toString(indice)).setText("");
-                 botoes.get(Integer.toString(indice)).setBounds((j+1)*30,(i+1)*30,30,30);
-                 botoes.get(Integer.toString(indice)).setVisible(true);
-                 //add o botao no JFrame
-                  getContentPane().add(botoes.get(Integer.toString(indice)));
-                  indice++;
+                indice = (Integer.toString(i)+","+Integer.toString(j));
+                botoes.put(indice, btnTemp); 
+                //add o botao no JFrame
+                 getContentPane().add(botoes.get(indice));
+                System.out.print(indice+"  ");
              }
                 System.out.println(" ");
            } 
     }
 
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnReiniciar;
+    private javax.swing.JButton btnVoltar;
+    private javax.swing.JLabel lblBandeira;
+    private javax.swing.JLabel lblContador;
     private javax.swing.JPanel pnlMapa;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import java.awt.event.ActionEvent;
@@ -19,7 +14,6 @@ import view.*;
 public class ControllerMain implements ActionListener, ChangeListener{
     
     private final ViewMain viewMain;
-    private  ViewMinefield viewMinefield;
 
     public ControllerMain (ViewMain viewMain){
         this.viewMain = viewMain;
@@ -60,8 +54,9 @@ public class ControllerMain implements ActionListener, ChangeListener{
   
         private void defineMapa(int i, int j) {
             this.viewMain.dispose();
-            this.viewMinefield = new ViewMinefield(i,j);
-            this.viewMinefield.setVisible(true);
+            ViewMinefield viewMinefield = new ViewMinefield(i,j);
+            new ControllerMinefield(viewMinefield);
+            viewMinefield.setVisible(true);
         
         
     }

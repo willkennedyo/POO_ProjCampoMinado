@@ -1,4 +1,4 @@
-package Minefield;
+package minesweeper;
 
 import controller.ControllerMain;
 import view.ViewMain;
@@ -10,6 +10,7 @@ public class MVC {
     
     public static void main(String[] args) {
 
+        //Definindo LookAndFeel
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {

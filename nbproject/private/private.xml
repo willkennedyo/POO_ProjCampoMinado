@@ -3,11 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Git/POO_ProjCampoMinado/src/view/ViewMain.java</file>
-            <file>file:/C:/Git/POO_ProjCampoMinado/src/model/bo/Minesweeper.java</file>
-            <file>file:/C:/Git/POO_ProjCampoMinado/src/minesweeper/MVC.java</file>
             <file>file:/C:/Git/POO_ProjCampoMinado/src/controller/ControllerCampo.java</file>
-            <file>file:/C:/Git/POO_ProjCampoMinado/src/model/vo/Campo.java</file>
+            <file>file:/C:/Git/POO_ProjCampoMinado/src/view/ViewCampo.java</file>
         </group>
     </open-files>
 </project-private>

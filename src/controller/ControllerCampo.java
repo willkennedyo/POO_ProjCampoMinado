@@ -135,11 +135,11 @@ public class ControllerCampo  implements ActionListener, MouseListener, ChangeLi
 
     private void marcaCampo(String indice) {
         ImageIcon icon = new javax.swing.ImageIcon(getClass().getResource("/images/-2.png"));
-        if (this.viewCampo.getBotaoMapa(indice).getIcon().toString().equals(icon.toString())){
+        if (this.viewCampo.getBotaoMapa(indice).getIcon().toString().equals(icon.toString()) &&  (campo.getFlags() < campo.getMinas())){
             campo.setFlags(+1);
             this.viewCampo.getBotaoMapa(indice).setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/9.png")));
-        }else{
-            this.viewCampo.getBotaoMapa(indice).setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/-2.png")));
+        }else if(!(this.viewCampo.getBotaoMapa(indice).getIcon().toString().equals(icon.toString()) && campo.getFlags() <= campo.getMinas())){
+            this.viewCampo.getBotaoMapa(indice).setIcon(icon);
             campo.setFlags(-1);
         }
         this.viewCampo.getLblContador().setText(campo.getFlags()+"/"+campo.getMinas());

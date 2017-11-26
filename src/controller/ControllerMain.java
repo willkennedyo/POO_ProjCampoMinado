@@ -5,7 +5,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import view.*;
+import view.ViewCampo;
+import view.ViewMain;
 
 /**
  *
@@ -20,7 +21,7 @@ public class ControllerMain implements ActionListener, ChangeListener{
         //Definido os listeners para os botões da viewMain
         this.viewMain.getBtn8x8().addActionListener(this);
         this.viewMain.getBtn16x16().addActionListener(this);
-        this.viewMain.getBtn16x30().addActionListener(this);
+        this.viewMain.getBtn12x12().addActionListener(this);
         this.viewMain.getBtnPref().addActionListener(this);
     }
     
@@ -34,8 +35,8 @@ public class ControllerMain implements ActionListener, ChangeListener{
             defineMapa(8,8);
         }else if(e.getSource()==this.viewMain.getBtn16x16()){
             defineMapa(16,16);
-        }else if(e.getSource()==this.viewMain.getBtn16x30()){
-            defineMapa(16,30);
+        }else if(e.getSource()==this.viewMain.getBtn12x12()){
+            defineMapa(12,12);
         }else if(e.getSource()==this.viewMain.getBtnPref()){
         JOptionPane.showMessageDialog(this.viewMain, "Projeto apresentado ao Curso de Análise e Desenvolvimento de Sistemas, \n"
                                                                                                 + "da FATEC-SP, do Centro Estadual de Educação Tecnológica Paula Souza, \n"
@@ -49,14 +50,14 @@ public class ControllerMain implements ActionListener, ChangeListener{
 
     @Override
     public void stateChanged(ChangeEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
     }
   
         private void defineMapa(int i, int j) {
             this.viewMain.dispose();
-            ViewMinefield viewMinefield = new ViewMinefield(i,j);
-            new ControllerMinefield(viewMinefield);
-            viewMinefield.setVisible(true);
+            ViewCampo viewCampo = new ViewCampo(i,j);
+            new ControllerCampo(viewCampo);
+            viewCampo.setVisible(true);
         
         
     }

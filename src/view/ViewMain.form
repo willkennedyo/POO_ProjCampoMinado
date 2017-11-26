@@ -107,13 +107,13 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="btn16x30" min="-2" pref="137" max="-2" attributes="0"/>
                               <Component id="btn8x8" min="-2" pref="137" max="-2" attributes="0"/>
+                              <Component id="btn16x16" min="-2" pref="137" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btnPref" min="-2" pref="137" max="-2" attributes="0"/>
-                              <Component id="btn16x16" min="-2" pref="137" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="btnPref" pref="137" max="32767" attributes="0"/>
+                              <Component id="btn12x12" pref="137" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -126,14 +126,14 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btn16x16" alignment="3" min="-2" pref="99" max="-2" attributes="0"/>
-                      <Component id="btn8x8" alignment="3" min="-2" pref="99" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="btn8x8" pref="99" max="32767" attributes="0"/>
+                      <Component id="btn12x12" pref="99" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="btnPref" min="-2" pref="99" max="-2" attributes="0"/>
-                      <Component id="btn16x30" min="-2" pref="99" max="-2" attributes="0"/>
+                      <Component id="btn16x16" min="-2" pref="99" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="18" max="32767" attributes="0"/>
               </Group>
@@ -149,6 +149,20 @@
             <Property name="text" type="java.lang.String" value="Escolha o Tabuleiro:"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JButton" name="btn12x12">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;h3 style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;12 x 12&lt;/strong&gt;&lt;/h3&gt; &lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;23&lt;/strong&gt; Minas&lt;/p&gt;&lt;/html&gt;"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn12x12ActionPerformed"/>
+          </Events>
+        </Component>
         <Component class="javax.swing.JButton" name="btn8x8">
           <Properties>
             <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;h3 style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;8 x 8&lt;/strong&gt;&lt;/h3&gt; &lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;10&lt;/strong&gt; Minas&lt;/p&gt;&lt;/html&gt;"/>
@@ -163,17 +177,6 @@
         <Component class="javax.swing.JButton" name="btn16x16">
           <Properties>
             <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;h3 style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;16 x 16&lt;/strong&gt;&lt;/h3&gt; &lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;40&lt;/strong&gt; Minas&lt;/p&gt;&lt;/html&gt;"/>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder/>
-              </Border>
-            </Property>
-            <Property name="focusable" type="boolean" value="false"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btn16x30">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;h3 style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;16 x 30&lt;/strong&gt;&lt;/h3&gt;&#xa;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;99&lt;/strong&gt; Minas&lt;/p&gt;&lt;/html&gt;"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder/>

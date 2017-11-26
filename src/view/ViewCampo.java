@@ -20,16 +20,16 @@ import javax.swing.JPanel;
  *
  * @author willian
  */
-public class ViewMinefield extends javax.swing.JFrame {
+public class ViewCampo extends javax.swing.JFrame {
 
     /**
-     * Creates new form ViewMinefield
+     * Creates new form ViewCampo
      */
     
     private int linha, coluna,minas;
     private  Map<String,JButton> botoes = new HashMap<String,JButton>();
     
-    public ViewMinefield(int linha, int coluna) {
+    public ViewCampo(int linha, int coluna) {
         this.linha = linha;
         this.coluna = coluna;
         initComponents();
@@ -72,7 +72,7 @@ public class ViewMinefield extends javax.swing.JFrame {
         lblContador.setText("0/0");
 
         lblBandeira.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblBandeira.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CampoMinadoAviso.png"))); // NOI18N
+        lblBandeira.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/9.png"))); // NOI18N
 
         javax.swing.GroupLayout pnlMapaLayout = new javax.swing.GroupLayout(pnlMapa);
         pnlMapa.setLayout(pnlMapaLayout);
@@ -216,15 +216,12 @@ public class ViewMinefield extends javax.swing.JFrame {
         JButton btnTemp;  
         String indice;
         
-        //Um Gambi Pattern basico
         this.setSize(((coluna+1)*28)+130,((linha+1)*28)+60);
         pnlMapa.setLocation((coluna+1)*28+15,10);
         this.add(pnlMapa, new GridBagConstraints());
-        //fim GP
-        
-        
         this.setLocationRelativeTo(null);
         
+        //criando o campo
         for (int i = 0; i <linha;i++){  
             for(int j = 0; j < coluna; j++){
                 btnTemp = new JButton();  
@@ -232,14 +229,13 @@ public class ViewMinefield extends javax.swing.JFrame {
                 btnTemp.setText("");
                 btnTemp.setBounds((j+1)*28,(i+1)*28,30,30);
                 btnTemp.setVisible(true);
+                btnTemp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/-2.png")));
                 //incluindo o botão no map com um rotulo, iniciando de 0
                 indice = (Integer.toString(i)+","+Integer.toString(j));
                 botoes.put(indice, btnTemp); 
                 //add o botao no JFrame
                  getContentPane().add(botoes.get(indice));
-                System.out.print(indice+"  ");
              }
-                System.out.println(" ");
            } 
     }
 
